@@ -1,3 +1,5 @@
+//test
+
 function isNotPC() {
   return !(window.innerWidth >= 1024 && window.innerHeight >= 768);
 }
