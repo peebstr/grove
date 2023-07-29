@@ -1,3 +1,23 @@
+function isNotPC() {
+  return !(window.innerWidth >= 1024 && window.innerHeight >= 768);
+}
+
+function isMobile() {
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
+function handleOverlayDisplay() {
+  var overlay = document.getElementById("overlay");
+  if (isNotPC() || isMobile()) {
+    overlay.style.display = "flex";
+  } else {
+    overlay.style.display = "none";
+  }
+}
+
+window.addEventListener('load', handleOverlayDisplay);
+window.addEventListener('resize', handleOverlayDisplay);
+
 const track = document.getElementById("image-track");
 
 const handleOnDown = e => track.dataset.mouseDownAt = e.clientX;
